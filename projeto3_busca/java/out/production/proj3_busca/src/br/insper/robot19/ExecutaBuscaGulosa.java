@@ -2,10 +2,6 @@ package br.insper.robot19;
 
 import java.io.IOException;
 
-import br.insper.robot19.vrep.VrepRobot;
-import br.insper.robot19.vrep.VrepSimulator;
-import br.insper.robot19.vrep.VrepWorld;
-
 public class ExecutaBuscaGulosa {
 
     private static float cellSize = 0.5f; //m

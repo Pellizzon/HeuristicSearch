@@ -2,7 +2,7 @@ package br.insper.robot19;
 
 import java.io.IOException;
 
-public class ExecutaBuscaGulosa {
+public class ExecutaBuscaA {
 
     private static float cellSize = 0.5f; //m
 
@@ -28,7 +28,7 @@ public class ExecutaBuscaGulosa {
         int[] rowColFim = map.getGoal();
         Block inicial = new Block(rowColIni[0], rowColIni[1], BlockType.FREE) ;
         Block alvo = new Block(rowColFim[0], rowColFim[1], BlockType.FREE) ;
-        BuscaGulosa busca = new BuscaGulosa(map, inicial, alvo);
+        BuscaA busca = new BuscaA(map, inicial, alvo);
         RobotAction[] solucao = busca.resolver();
 
         //Mostra a solução

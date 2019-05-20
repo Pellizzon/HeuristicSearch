@@ -3,7 +3,6 @@ package br.insper.robot19;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 public class BuscaGulosa {
 
@@ -13,7 +12,7 @@ public class BuscaGulosa {
 
     private PriorityQueue<Node> border;
 
-    public BuscaGulosa (GridMap map, Block start, Block end) {
+    public BuscaGulosa(GridMap map, Block start, Block end) {
         this.map = map;
         this.start = start;
         this.end = end;
@@ -21,9 +20,9 @@ public class BuscaGulosa {
 
     public Node buscar() {
 
-        Node root = new Node(start, null, null, 0);
+        Node root = new Node(start, null, null, 0, map);
 
-        border = new PriorityQueue<Node>();
+        border = new PriorityQueue<Node>(144, new ComparatorGulosa());
         border.add(root);
 
         while(!border.isEmpty()) {
@@ -39,7 +38,7 @@ public class BuscaGulosa {
                 Block proximo = map.nextBlock(atual, acao);
 
                 if(proximo != null && proximo.type != BlockType.WALL) {
-                    Node novoNode = new Node(proximo, node, acao, proximo.type.cost);
+                    Node novoNode = new Node(proximo, node, acao, proximo.type.cost, map);
                     border.add(novoNode);
                 }
             }

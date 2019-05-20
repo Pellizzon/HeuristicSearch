@@ -4,7 +4,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 
-public class BuscaGulosa {
+public class BuscaA {
 
     private Block start;
     private Block end;
@@ -12,7 +12,7 @@ public class BuscaGulosa {
 
     private PriorityQueue<Node> border;
 
-    public BuscaGulosa(GridMap map, Block start, Block end) {
+    public BuscaA(GridMap map, Block start, Block end) {
         this.map = map;
         this.start = start;
         this.end = end;
@@ -22,7 +22,7 @@ public class BuscaGulosa {
 
         Node root = new Node(start, null, null, 0, map);
 
-        border = new PriorityQueue<Node>(144, new ComparatorGulosa());
+        border = new PriorityQueue<Node>(144, new ComparatorA());
         border.add(root);
 
         while(!border.isEmpty()) {
