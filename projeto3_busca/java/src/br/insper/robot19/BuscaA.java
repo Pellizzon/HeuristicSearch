@@ -1,8 +1,10 @@
 package br.insper.robot19;
 
 import java.util.Deque;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.Set;
 
 public class BuscaA {
 
@@ -25,10 +27,14 @@ public class BuscaA {
         border = new PriorityQueue<Node>(144, new ComparatorA());
         border.add(root);
 
+        Set<Block> visitados = new HashSet<>();
+        visitados.add(root.getValue());
+
         while(!border.isEmpty()) {
 
             Node node = border.remove();
             Block atual = node.getValue();
+            visitados.add(atual);
 
             if(atual.row == end.row && atual.col == end.col) {
                 return node;
@@ -39,7 +45,9 @@ public class BuscaA {
 
                 if(proximo != null && proximo.type != BlockType.WALL) {
                     Node novoNode = new Node(proximo, node, acao, proximo.type.cost, map);
-                    border.add(novoNode);
+                    if (!visitados.contains(novoNode.getValue())) {
+                        border.add(novoNode);
+                    }
                 }
             }
         }

@@ -9,12 +9,6 @@ public class ComparatorA implements Comparator<Node> {
         float result1 = b1.getHeuristic() + b1.getPathCost();
         float result2 = b2.getHeuristic() + b2.getPathCost();
 
-        if (result1 < result2) {
-            return -1;
-        } else if (result1 > result2) {
-            return 1;
-        } else {
-            return 0;
-        }
+        return Float.compare(result1, result2);
     }
 }

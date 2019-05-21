@@ -3,6 +3,8 @@ package br.insper.robot19;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
+import java.util.Set;
+import java.util.HashSet;
 
 public class BuscaGulosa {
 
@@ -21,14 +23,17 @@ public class BuscaGulosa {
     public Node buscar() {
 
         Node root = new Node(start, null, null, 0, map);
+        Set<Block> visitados = new HashSet<>();
 
         border = new PriorityQueue<Node>(144, new ComparatorGulosa());
         border.add(root);
+        visitados.add(root.getValue());
 
         while(!border.isEmpty()) {
 
             Node node = border.remove();
             Block atual = node.getValue();
+            visitados.add(atual);
 
             if(atual.row == end.row && atual.col == end.col) {
                 return node;
@@ -39,7 +44,9 @@ public class BuscaGulosa {
 
                 if(proximo != null && proximo.type != BlockType.WALL) {
                     Node novoNode = new Node(proximo, node, acao, proximo.type.cost, map);
-                    border.add(novoNode);
+                    if (!visitados.contains(novoNode.getValue())) {
+                        border.add(novoNode);
+                    }
                 }
             }
         }

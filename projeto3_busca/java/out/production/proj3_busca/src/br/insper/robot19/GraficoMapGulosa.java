@@ -15,7 +15,7 @@ public class GraficoMapGulosa {
      * @param g Um objeto do itpo GridMap
      */
     public GraficoMapGulosa (GridMap g){
-        this(g, 800, 600    );
+        this(g, 800, 600);
     }
 
     /**

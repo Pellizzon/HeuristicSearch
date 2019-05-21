@@ -12,7 +12,6 @@ public class Node {
 		this.parent = parent;
 		this.action = action;
 
-		int[] start = map.getStart();
 		int[] finish = map.getGoal();
 
 		this.heuristic = Math.abs(finish[0] - value.row) + Math.abs(finish[1] - value.col);
