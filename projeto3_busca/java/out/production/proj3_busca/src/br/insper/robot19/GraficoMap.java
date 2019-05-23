@@ -3,7 +3,7 @@ package br.insper.robot19;
 import java.awt.*;
 import java.io.IOException;
 
-public class GraficoMapA {
+public class GraficoMap {
     GridMap map;
     int width;
     int height;
@@ -14,7 +14,7 @@ public class GraficoMapA {
      *
      * @param g Um objeto do itpo GridMap
      */
-    public GraficoMapA (GridMap g){
+    public GraficoMap (GridMap g){
         this(g, 800, 600    );
     }
 
@@ -24,7 +24,7 @@ public class GraficoMapA {
      * @param width A largura desejada para a janela
      * @param height A altura desejada para a janela
      */
-    public GraficoMapA(GridMap g, int width, int height){
+    public GraficoMap(GridMap g, int width, int height){
         this.map = g;
         this.width = width;
         this.height = height;
@@ -134,9 +134,9 @@ public class GraficoMapA {
         /**
          * Situação: mostra o mapa inicial
          */
-        GraficoMapA grafico = new GraficoMapA(map);
+        GraficoMap grafico = new GraficoMap(map);
         grafico.desenha();
-        grafico.saveFile("BuscaA.png");
+        grafico.saveFile("Busca1.png");
 
         /**
          * Agora vamos fazer uma busca em largura
@@ -151,7 +151,7 @@ public class GraficoMapA {
         Block g = new Block(f[0], f[1], map.getBlockType(f[0], f[1]));
 
         // Rodando a busca
-        BuscaA busca = new BuscaA(map, sb, g);
+        BuscaLargura busca = new BuscaLargura(map, sb, g);
         RobotAction[] solucao = busca.resolver();
 
         // Requisitando o plot da solução sobre o gráfico

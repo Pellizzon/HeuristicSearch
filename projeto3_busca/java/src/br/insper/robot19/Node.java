@@ -7,7 +7,7 @@ public class Node {
 	private float pathCost;
 	private int heuristic;
 
-	public Node (Block value, Node parent, RobotAction action, float cost, GridMap map) {
+	public Node(Block value, Node parent, RobotAction action, float cost, GridMap map) {
 		this.value = value;
 		this.parent = parent;
 		this.action = action;

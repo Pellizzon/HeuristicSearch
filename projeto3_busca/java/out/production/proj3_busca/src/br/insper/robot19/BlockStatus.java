@@ -11,6 +11,4 @@ public enum BlockStatus {
 		this.symbol = symbol;
 	}
 
-    public static class ComparatorGulosa {
-    }
 }

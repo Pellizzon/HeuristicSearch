@@ -2,7 +2,7 @@ package br.insper.robot19.vrep;
 
 import br.insper.robot19.*;
 
-public class MainA {
+public class MainGulosa {
     public static void main(String[] args) {
 
         float cellsize = 0.5f;
@@ -18,7 +18,7 @@ public class MainA {
         int[] rowColFim = map.getGoal();
         Block inicial = new Block(rowColIni[0], rowColIni[1], BlockType.FREE);
         Block alvo = new Block(rowColFim[0], rowColFim[1], BlockType.FREE);
-        BuscaA busca = new BuscaA(map, inicial, alvo);
+        BuscaGulosa busca = new BuscaGulosa(map, inicial, alvo);
         RobotAction[] solucao = busca.resolver();
 
         System.out.println(map);

@@ -7,7 +7,6 @@ public class MainA {
 
         float cellsize = 0.5f;
 
-
         VrepSimulator sim = VrepSimulator.getInstance();
         VrepWorld world = sim.createWorld();
         VrepRobot robot = sim.createRobot();
@@ -41,6 +40,7 @@ public class MainA {
             System.out.println();
             System.out.println("Rota encontrada:");
             System.out.println(map);
+
             for (RobotAction a: solucao) {
                 robot.execute(a, cellsize);
             }
