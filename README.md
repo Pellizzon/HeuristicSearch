@@ -15,9 +15,11 @@ Our project implements both the greedy search and the A* search algorithms in a 
 To run the project without integrating with the simulator just run either ExecuteA.java or ExecuteGreedy.java. The output is an animation that shows the search process for the input map.
 
 <b>A* Search:</b>
+
 <img src="A-Star.gif" width=600>
 
 <b>Greedy Search:</b>
+
 <img src="Greedy.gif" width=600/>
 
 **Link of the V-REP Simulation:**
